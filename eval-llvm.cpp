@@ -3,9 +3,16 @@
 int main(int argc, char** argv)
 {
     std::string program = R"(
-
-      (printf "Value: %d\n" 42)
     
+    (var VERSION 45)
+
+    // (begin
+    //     (var VERSION "Hello")
+    //     (printf "Version: %s\n\n" VERSION)
+    
+    (printf "Version: %d\n\n" VERSION)
+    
+
     )";
 
     EvalLLVM eval;
