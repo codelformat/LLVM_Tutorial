@@ -74,7 +74,7 @@ private:
     void setupGlobalEnvironment()
     {
         std::map<std::string, llvm::Value *> globalObject{
-            {"VERSION", builder->getInt32(42)}};
+            {"VERSION", builder->getInt32(0)}};
 
         std::map<std::string, llvm::Value *> globalRec{};
 
@@ -112,7 +112,7 @@ private:
             GlobalEnv);
 
         // 创建全局变量VERSION
-        createGlobalVariable("VERSION", builder->getInt32(42));
+        // createGlobalVariable("VERSION", builder->getInt32(42));
 
         // 2. 编译函数主体
         gen(ast, GlobalEnv);
